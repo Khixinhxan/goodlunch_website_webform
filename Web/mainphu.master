@@ -1,0 +1,272 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="mainphu.master.cs" Inherits="mainphu" %>
+
+<%@ Register Src="TaiNguyenDieuKhien/LienKet.ascx" TagName="LienKet" TagPrefix="uc5" %>
+<%@ Register Src="TaiNguyenDieuKhien/ThongTinThiTruong.ascx" TagName="ThongTinThiTruong"
+    TagPrefix="uc4" %>
+<%@ Register Src="TaiNguyenDieuKhien/Top10SanPham.ascx" TagName="Top10SanPham" TagPrefix="uc3" %>
+<%@ Register Src="TaiNguyenDieuKhien/MenuDanhMuc.ascx" TagName="MenuDanhMuc" TagPrefix="uc2" %>
+<%@ Register Src="TaiNguyenDieuKhien/ThongKeTruyCap.ascx" TagName="ThongKeTruyCap"
+    TagPrefix="uc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="A Community Based WordPress Theme" />
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="coin-slider-styles.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="menusm.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="pagenavi-css.css" media="screen" />
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+    <link href="Facebook.css" rel="stylesheet" />
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="js/coin-slider.min.js"></script>
+    <!-- slider -->
+    <script type="text/javascript" src="js/cufon-yui.js"></script>
+    <!-- cufon -->
+    <script type="text/javascript" src="js/cufon-chunkfive.js"></script>
+    <!-- cufon font -->
+    <script type="text/javascript" src="js/menusm.js"></script>
+    <!-- menu -->
+    <script type="text/javascript" src="js/script.js"></script>
+      <!--facebook -->
+    <script src="js/Facebook.js"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <a id="go-top" href="#"></a>
+        <div>
+            <div id="page">
+                <div id="header">
+                    <sticknav>
+                    <div id="nav1">
+                        <ul class="menusm">
+                            <li class="current-cat"><a href="GioiThieu.aspx">Giới Thiệu</a></li>
+                            <li><a href="#">Tuyển dụng</a></li>
+                            <li><a href="TinTuc.aspx">Tin Tức</a></li>
+                            <%--<li><a href="#">Bảng thuật ngữ</a></li>
+                            <li><a href="#">Sơ đồ trang</a></li>--%>
+                            <li><a href="Mail.aspx">Liên hệ</a></li>
+                        </ul>
+                        <div class="clr"></div>
+                    </div>
+                        </sticknav>
+                    <div class="clr"></div>
+                    <!-- /navigation -->
+                    <div class="logo">
+                        <img  src="images/logo_tk.png" style="width:100%; height:100px"/>
+                        <%--<h1><a href="#">Good Lunch <small class="slogan">CTY TNHH Good Lunch</small></a></h1>--%>
+                    </div>
+                    <div class="topnav">
+                        <ul class="menusm">
+                            <li class="current_page_item"><a href="Default.aspx">Trang chủ</a></li>
+                            <li><a href="GioiThieu.aspx">Giới Thiệu</a></li>
+                            <li><a href="#">Món ăn</a><ul>
+                                <li><a href="SanPhamTheoDanhMuc.aspx?IdDanhMucSanPham=1">Thứ 2</a></li>
+                                <li><a href="SanPhamTheoDanhMuc.aspx?IdDanhMucSanPham=2">Thứ 3</a></li>
+                                <li><a href="SanPhamTheoDanhMuc.aspx?IdDanhMucSanPham=3">Thứ 4</a></li>
+                                <li><a href="SanPhamTheoDanhMuc.aspx?IdDanhMucSanPham=4">Thứ 5</a></li>
+                                <li><a href="SanPhamTheoDanhMuc.aspx?IdDanhMucSanPham=5">Thứ 6</a></li>
+                            </ul>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click1">Đơn Hàng</asp:LinkButton></li>
+                            <li><a href="GioHang.aspx">Giỏ Hàng</a></li>
+                        </ul>
+                        <div class="clr"></div>
+                    </div>
+                    <!--/topnav -->
+                    <div class="clr"></div>
+                    <div class="rss">
+                        <p><a href="#">
+                            <img src="images/rss.png" width="29" height="29" alt="rss" /></a> <a href="#">Subscribe to our RSS</a></p>
+                         <div id="thu" runat="server" style="padding-left:15px; font-size:15px;color:white" ></div><div id="thoigian" runat="server" style="padding-left:15px; font-size:15px;color:white"></div>
+                    </div>
+                    <div class="clr"></div>
+                </div>
+                <!--/header -->
+                <div id="columns">
+                    <div class="index-cols">
+
+
+                        <div class="thantrang">
+                            <div class="bentrai">
+                                <div class="menudoc">
+                                    <div class="thanhmenu" id="DIV1" onclick="return DIV1_onclick()">
+                                        <h4>DANH MỤC</h4>
+                                    </div>
+                                    <div class="danhmucsanpham">
+                                        <ul>
+                                            <uc2:MenuDanhMuc ID="MenuDanhMuc1" runat="server" />
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="menudoc">
+                                    <div class="thanhmenu">
+                                        <h4>CÁC MÓN MỚI NHẤT</h4>
+                                    </div>
+                                    <div class="tintuc">
+                                        <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; padding: 5px;">
+                                            <tr>
+                                                <td style="width: 207px">
+                                                     <uc3:Top10SanPham ID="Top10SanPham1" runat="server" />
+                                    
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </div>
+                                </div>
+                                <div class="menudoc">
+                                    <div class="thanhmenu">
+                                        <h4>THÔNG TIN KHUYẾN MÃI</h4>
+                                    </div>
+                                    <div>
+                                        <%--<uc4:ThongTinThiTruong ID="ThongTinThiTruong1" runat="server" />--%>
+                                    </div>
+                                </div>
+                                <div class="menudoc">
+                                    <div class="thanhmenu">
+                                        <h4>LIÊN KẾT</h4>
+
+                                    </div>
+                                    <div>
+                                        <uc5:LienKet ID="LienKet1" runat="server" />
+                                    </div>
+                                    <div style="border: 1px solid #ccc">
+                                        <embed src="flash/fly.swf" quality="high" type="application/x-shockwave-flash" wmode="transparent" allowscriptaccess="always" style="width: 0px; height: 0px"></embed>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="giua">
+                                <div class="product">
+                                </div>
+                                <div class="sanpham">
+                                    <asp:Label ID="lblchao" runat="server" Text=""></asp:Label>
+                                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                    </asp:ContentPlaceHolder>
+
+
+                                </div>
+                            </div>
+                            <div class="benphai">
+                                <div class="thanhmenu">
+                                    <h4>ĐẶT MÓN QUA PHONE</h4>
+                                </div>
+                                <div class="muahanggoingay">
+                                    <h4><b>Đặt món gọi ngay:</b></h4>
+                                    <p style="text-indent: 30px; color: Red; font-weight: bold;">Holine:016.34.746.647</p>
+                                    <p style="text-indent: 30px; color: Red; font-weight: bold;">Holine:016.34.746.647</p>
+                                    <hr />
+                                    <p style="text-align: center; font-weight: bold; font-size: 14px;">Giao hàng tận nơi</p>
+                                    <ul>
+                                        <li><a href="#">Hướng dẫn đặt món</a></li>
+                                    </ul>
+                                </div>
+                                <div class="thanhmenu">
+                                    <h4>SUPPORT</h4>
+                                </div>
+                                <div class="hotrokhachhang">
+                                </div>
+                                <div class="menutintuc">
+                                    <div class="thanhmenu">
+                                        <h4>QUẢNG CÁO</h4>
+                                    </div>
+                                    <div>
+                                    </div>
+                                    <div class="thanhmenu">
+                                        <h4>THỐNG KÊ TRUY CẬP</h4>
+                                    </div>
+                                    <div style="border: 1px solid #ccc">
+                                        <table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
+                                            <tr>
+                                                <td style="height: 16px; font-weight: bold; padding-top: 10px;" align="center" colspan="2">
+                                                    <uc1:ThongKeTruyCap ID="ThongKeTruyCap1" runat="server" />
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="height: 18px; padding-left: 40px; font-weight: bold;"></td>
+                                                <td style="height: 18px; font-weight: bold; float: left; padding-right: 30px; padding-bottom: 5px;"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--/columns -->
+            <div class="clr"></div>
+        </div>
+        <!--/page -->
+        <div class="footer2">
+            <div class="footer2_resize">
+                <div class="col col1">
+                    <h2>Team</h2>
+                    <ul>
+                        <li><a href="#">Nguyễn Hoài Đăng</a></li>
+                        <li><a href="#">Hoàng Minh Duy</a></li>
+                        <li><a href="#">Vũ Văn Dũng</a></li>
+                        <li><a href="#">K'Giang</a></li>
+                        <li><a href="#">GVHD Lê Thùy Trang</a></li>
+                    </ul>
+                </div>
+                <div class="col col2">
+                    <h2>Last Updates</h2>
+                    <ul>
+                        <li><a href="#">What Browser To Choose?</a><br />
+                            posted on August 20, 2017</li>
+                        <li><a href="#">Getting Started</a><br />
+                            posted on August 20, 2017</li>
+                        <li><a href="#">Why?</a><br />
+                            posted on August 20, 2017</li>
+                    </ul>
+                </div>
+                <div class="col col3">
+                    <h2>Time</h2>
+                    <ul>
+                            <li><a href="#">8-2017</a></li>
+                            <li><a href="#">9-2017</a></li>
+                            <li><a href="#">10-2017</a></li>
+                            <li><a href="#">11-2017</a></li>
+                            <li><a href="#">12-2017</a></li>
+                    </ul>
+                </div>
+                <div class="col col4">
+                    <h2>Information</h2>
+                        <p><span><img src="images/address.png" style="width:20px;height:20px;"/></span>NHÓM 1 </p>
+                        <p><span><img src="images/call.png" style="width:20px;height:20px;"/></span> 01634.746.647</p>
+                        <p><span><img src="images/mess.png" style="width:20px;height:20px;"/></span> 01634.746.647</p>
+                        <p><span><img src="images/gmail1.png" style="width:20px;height:20px;"/></span> nguyen.h.dang.739@gmail.com</p>
+                        <p><span><img src="images/facebook1.png" style="width:20px; height:20px"/></span><a href="http://facebook.com/nguyen.h.dang.739">Hoài Đăng</a></p>
+                </div>
+                <div class="clr"></div>
+            </div>
+        </div>
+
+        <div id="page_bottom">
+            <div id="footer">
+                <div class="text1">&copy; Copyright All Rights Reserved</div>
+                <div class="text2">Design </div>
+            </div>
+            <div class="clr"></div>
+            <!--/footer -->
+               <div id="fb-root"></div>
+  <div id="cfacebook">
+  <a href="javascript:;" class="chat_fb" onclick="return:false;"><i class="fa fa-facebook-square"></i>Liên hệ chúng tôi</a>
+  <div class="fchat">
+  <div class="fb-page" data-tabs="messages" data-href="https://www.facebook.com/abc" data-width="250" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"></div>
+  </div>
+  </div>
+        </div>
+
+    </form>
+</body>
+</html>

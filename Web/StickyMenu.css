@@ -1,0 +1,14 @@
+﻿sticknav {
+background: black;
+height: 40px;
+/*width: 71.2%;*/
+margin-right: 195px;
+margin-left: 195px;
+left: 0px;
+right: 0px;
+position: relative;
+z-index: 9999;
+border-bottom:5px solid #ff6a00;
+border-top:5px solid #ff6a00;
+}
+.fixed { position:fixed;}
